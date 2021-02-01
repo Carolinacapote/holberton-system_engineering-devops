@@ -1,2 +1,2 @@
 #!/bin/bash
-tr -id c
+tr '[:upper:]' '[:lower:]' | tr -d c
