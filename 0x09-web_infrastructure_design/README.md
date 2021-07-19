@@ -6,7 +6,7 @@ Learning about web infrastructure.
 
 ### Files description
 
-- **holberton-system_engineering-devops:**  
+- **0-simple_web_stack.jpg:**  
 One server web infrastructure that hosts the website that is reachable via www.foobar.com.
   - 1 server
   - 1 web server (Nginx)
@@ -15,7 +15,7 @@ One server web infrastructure that hosts the website that is reachable via www.f
   - 1 database (MySQL)
   - 1 domain name foobar.com configured with a www record that points to your server IP 8.8.8.8
 
-- **1-distributed_web_infrastructure:**  
+- **1-distributed_web_infrastructure.jpg:**  
  A three server web infrastructure that hosts the website www.foobar.com.
   We added:
   2 servers
@@ -25,15 +25,16 @@ One server web infrastructure that hosts the website that is reachable via www.f
   - 1 set of application files (your code base)
   - 1 database (MySQL)
 
-- **2-secured_and_monitored_web_infrastructure:**  
+- **2-secured_and_monitored_web_infrastructure.jpg:**  
 A three server web infrastructure that hosts the website www.foobar.com, it is secured, serve encrypted traffic, and be monitored.
   We added:
   - 3 firewalls
   - 1 SSL certificate to serve www.foobar.com over HTTPS
   - 3 monitoring clients (data collector for Sumologic or other monitoring services)
 
-## Author
+## Authors
 
 | Name | GitHub username |
 | ------ | ------ |
 | Carolina Capote | [Carolinacapote](https://github.com/Carolinacapote) |
+| Cristian Pinzón | [faykris](https://github.com/faykris) |
