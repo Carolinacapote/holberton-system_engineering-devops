@@ -4,7 +4,6 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-server = "/listen 80 default_server;\n"
 redirecting_info = "rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
-sed -i "$server $redirecting_info" /etc/nginx/sites-available/default
+sed -i '/listen 80 default_server;/a $redirecting_info' /etc/nginx/sites-available/default
 service nginx start
