@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Commands used to debug
+sudo service apache2 start
