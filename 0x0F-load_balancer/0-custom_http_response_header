@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Configure the web-02 server: Update index.html with new message / update 404_page.html with new error message
+# Update redirect_me with new URL / Configure Nginx so that its HTTP response contains a custom header
+
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.html
+OLD="server_name _;"
+NEW="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
+HEADER="\n\tlocation / {\n\t\ttry_files / =404;\n\t\tadd_header X-Served-By $HOSTNAME always;\n\t}"
+sed -i "/$OLD/a\\$NEW $HEADER" /etc/nginx/sites-available/default
+service nginx restart
