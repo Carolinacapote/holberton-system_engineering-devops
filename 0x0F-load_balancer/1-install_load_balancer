@@ -11,10 +11,9 @@ frontend main
          default_backend web-server
 backend web-server
         balance roundrobin
-        server 2621-web-01 34.138.154.248:80 check
-        server 2621-web-02 35.227.26.227:80 check
+        server 2621-web-01 34.138.154.248:80
+        server 2621-web-02 35.227.26.227:80
 "
 
 echo "$CONF" >> /etc/haproxy/haproxy.cfg
-echo "ENABLED=1" >> /etc/default/haproxy
-service haproxy start
+service haproxy restart
