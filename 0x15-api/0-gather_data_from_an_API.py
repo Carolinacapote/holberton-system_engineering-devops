@@ -33,4 +33,4 @@ if __name__ == "__main__":
           format(employee_name, total_tasks_done, total_tasks))
 
     for task_done in tasks_done:
-        print('\t{}'.format(task_done))
+        print('\t {}'.format(task_done))
