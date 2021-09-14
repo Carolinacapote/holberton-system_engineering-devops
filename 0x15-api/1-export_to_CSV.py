@@ -19,10 +19,10 @@ if __name__ == "__main__":
     todo_list = response_2.json()
 
     # User's data
-    employee_name = user_info.get('name')
+    user_name = user_info.get('username')
 
     with open(employee_id + '.csv', 'w') as file:
         user_file = csv.writer(file, quoting=csv.QUOTE_ALL)
         for task in todo_list:
-            user_file.writerow([employee_id, employee_name,
+            user_file.writerow([employee_id, user_name,
                                 task.get('completed'), task.get('title')])
