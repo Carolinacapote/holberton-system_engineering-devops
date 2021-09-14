@@ -14,8 +14,8 @@ if __name__ == "__main__":
     response = requests.get(api_url + '/users/' + employee_id)
     user_info = response.json()
     # Getting the user's to do list
-    response_2 = requests.get(api_url + '/users/' + employee_id + '/todos')
-    todo_list = response_2.json()
+    response = requests.get(api_url + '/users/' + employee_id + '/todos')
+    todo_list = response.json()
 
     # User's data
     employee_name = user_info.get('name')
