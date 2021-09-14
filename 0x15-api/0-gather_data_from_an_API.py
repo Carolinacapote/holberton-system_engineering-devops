@@ -9,12 +9,12 @@ from sys import argv
 
 if __name__ == "__main__":
     employee_id = argv[1]
-    api_url = 'https://jsonplaceholder.typicode.com/'
+    api_url = 'https://jsonplaceholder.typicode.com'
     # Getting the user's info
-    response = requests.get(api_url + 'users/' + employee_id)
+    response = requests.get(api_url + '/users/' + employee_id)
     user_info = response.json()
     # Getting the user's to do list
-    response_2 = requests.get(api_url + 'users/' + employee_id + '/todos')
+    response_2 = requests.get(api_url + '/users/' + employee_id + '/todos')
     todo_list = response_2.json()
 
     # User's data
