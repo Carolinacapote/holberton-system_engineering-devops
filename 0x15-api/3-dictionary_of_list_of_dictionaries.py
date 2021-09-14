@@ -15,11 +15,11 @@ if __name__ == "__main__":
 
     # iterating into users list and saving in dictionary
     users_dict = {}
-    new_list = []
     for user in users_info:
         response = requests.get(api_url + '/users/{}/todos'.
                                 format(user.get('id')))
         todo_list = response.json()
+         new_list = []
         for task in todo_list:
             task_dict = {'username': user.get('username'),
                          'task': task.get('title'),
