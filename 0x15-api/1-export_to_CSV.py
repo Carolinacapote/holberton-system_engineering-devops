@@ -5,7 +5,6 @@ information about his/her TODO list progress.
 """
 import requests
 from sys import argv
-import csv
 
 
 if __name__ == "__main__":
@@ -21,8 +20,8 @@ if __name__ == "__main__":
     # User's data
     user_name = user_info.get('username')
 
-    with open(employee_id + '.csv', 'w') as file:
-        user_file = csv.writer(file, quoting=csv.QUOTE_ALL)
+    with open(employee_id + '.csv', 'w') as new_file:
         for task in todo_list:
-            user_file.writerow([employee_id, user_name,
-                                task.get('completed'), task.get('title')])
+            new_file.write('"{}","{}","{}","{}"\n'.
+                           format(employee_id, user_name,
+                                  task.get('completed'), task.get('title')))
