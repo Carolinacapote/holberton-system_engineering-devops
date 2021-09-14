@@ -19,7 +19,7 @@ if __name__ == "__main__":
         response = requests.get(api_url + '/users/{}/todos'.
                                 format(user.get('id')))
         todo_list = response.json()
-         new_list = []
+        new_list = []
         for task in todo_list:
             task_dict = {'username': user.get('username'),
                          'task': task.get('title'),
