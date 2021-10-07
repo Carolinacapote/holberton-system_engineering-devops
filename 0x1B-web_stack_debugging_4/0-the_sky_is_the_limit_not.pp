@@ -1,11 +1,5 @@
-# Puppet code to fix a bug
-
+# Puppet script that changes the worker_processes in the nginx configuration file.
 exec { 'debugging':
-  command  => "/usr/bin/env sed -i s/15/1000/ /etc/default/nginx",
-  provider => shell;
-}
-
-exec { 'restart':
-  command  => "usr/bin/env service nginx restart",
-  provider => shell;
+  command => "sed -i 's/worker_processes 4;/worker_processes 7;/g' /etc/nginx/nginx.conf; sudo service nginx restart",
+  path    => ['/bin', '/usr/bin', '/usr/sbin']
 }
