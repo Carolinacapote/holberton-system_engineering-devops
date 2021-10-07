@@ -1,6 +1,9 @@
-# Puppet code to fix a bug
-
-exec { 'debugging':
-  command  => "/usr/bin/env sed -i 's/holberton/foo/' /etc/security/limits.conf",
-  provider => shell;
+# Puppet script that changes the OS configuration.
+exec { 'limit1':
+  command  => 'sudo sed -i \'s/nofile 5/nofile 30000/\' /etc/security/limits.conf',
+  provider => shell,
+}
+exec { 'limit2':
+  command  => 'sudo sed -i \'s/nofile 4/nofile 10000/\' /etc/security/limits.conf',
+  provider => shell,
 }
